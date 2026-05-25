@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-selection-bg: var(--selection-bg);
+  --color-selection-text: var(--selection-text);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter);
+
+  /* Minimal Paper Theme */
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
+  --neutral-950: #0a0a0a;
+}
+
+:root {
+  /* Paper-like background (Zinc-50) */
+  --background: #fdfdfc;
+  --foreground: #171717;
+
+  /* Muted tones for meta-data */
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+
+  /* Border colors */
+  --border: #e5e5e5;
+
+  /* Selection */
+  --selection-bg: #e5e5e5;
+  --selection-text: #171717;
+}
+
+.dark {
+  /* Custom dark background */
+  --background: #080808;
+  --foreground: #fafafa;
+
+  /* Muted tones for dark mode */
+  --muted: #262626;
+  --muted-foreground: #a3a3a3;
+
+  /* Border colors */
+  --border: #262626;
+
+  /* Selection */
+  --selection-bg: #404040;
+  --selection-text: #fafafa;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.428;
+}
+
+html, body {
+  background-color: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+  overflow-anchor: none;
+}
+
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+/* Highlight sweep animation */
+@keyframes highlight-sweep {
+  from {
+    background-size: 0% 100%;
+  }
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+.highlight-sweep {
+  background-image: linear-gradient(to right, rgb(254 243 199 / 0.7), rgb(254 243 199 / 0.7));
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  animation: highlight-sweep 0.6s ease-out forwards;
+}
+
+.dark .highlight-sweep {
+  background-image: linear-gradient(to right, rgb(251 191 36 / 0.25), rgb(251 191 36 / 0.25));
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 2;
+}
+
+/* Availability pulse dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.75); }
+}
+
+.pulse-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Utility classes for typography */
+.font-serif-accent {
+  font-family: var(--font-inter), sans-serif;
+}
+
+.font-mono-meta {
+  font-family: var(--font-inter), sans-serif;
+}

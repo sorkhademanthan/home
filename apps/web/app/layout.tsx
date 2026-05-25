@@ -1,30 +1,46 @@
-import { Geist, Geist_Mono } from "next/font/google"
+// app/layout.tsx
+import { ThemeProvider } from "@/components/theme-provider";
+import { ScrollProgress } from "@/components/scroll-progress";
+import "./globals.css";
+import { Inter } from "next/font/google";
+import { GeistPixelSquare } from "geist/font/pixel";
+import { Analytics } from "@vercel/analytics/next"
+import JsonLd from "@/components/json-ld";
+import { sharedMetadata, sharedViewport } from "./shared-metadata";
 
-import "@workspace/ui/globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@workspace/ui/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-mono",
-})
+  variable: "--font-inter",
+  display: "swap",
+  adjustFontFallback: false,
+});
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+
+export const metadata = sharedMetadata;
+export const viewport = sharedViewport;
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
+      className={`${inter.variable} ${GeistPixelSquare.variable}`}
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
     >
       <body>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ScrollProgress />
+          <Analytics />
+          <JsonLd />
+          <div className="pointer-events-none fixed inset-x-0 top-0 z-50 h-24 backdrop-blur-md [mask-image:linear-gradient(to_bottom,white,transparent)]"></div>
+          <div className="pointer-events-none fixed inset-x-0 bottom-0 z-50 h-24 backdrop-blur-md [mask-image:linear-gradient(to_top,white,transparent)]"></div>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
