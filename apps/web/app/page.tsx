@@ -8,46 +8,76 @@ import { LocalTime } from "@/components/local-time";
 
 const EXPERIENCES = [
   {
-    role: "Software Engineer",
+    role: "Freelance Full Stack Developer",
     company: "Independent",
-    period: "2023 — Present",
-    description: "Building web apps and crypto tooling for early-stage products. Work spans payment platforms, wallet integrations, and interface systems."
+    period: "Mar. 2024 — Present",
+    description: [
+      <span key="1"><strong className="text-foreground font-semibold">NH STUDIOZ:</strong> Built and scaled an e-commerce platform and custom dashboard for a 50M+ audience media brand.</span>,
+      <span key="2"><strong className="text-foreground font-semibold">MRC HOBBIES:</strong> Developed a high-traffic e-commerce processing 3L+ monthly transactions across 7K+ active users.</span>,
+      <span key="3"><strong className="text-foreground font-semibold">ORCAA DESIGNS:</strong> Built and deployed a modern agency website with responsive design and optimized performance.</span>
+    ]
   },
   {
-    role: "Frontend Intern",
-    company: "CSRBOX",
-    period: "2023",
-    description: "Built accessible, responsive frontend components. Worked on form handling and layout systems."
+    role: "Full Stack Developer Intern",
+    company: "TFG Solution",
+    period: "Mar. 2026 — Present",
+    description: [
+      "Built 5+ scalable full-stack features using React.js, Node.js, Express.js, MongoDB, and REST APIs for client projects.",
+      "Developed authentication and backend workflows that reduced manual operational effort by 30%.",
+      "Resolved 20+ bugs and optimized application performance, reducing API response time by 25%."
+    ]
   }
 ];
 
 const PROJECTS = [
   {
+    title: "ConnectX",
+    type: "LMS Platform",
+    stack: "React, Node.js, MongoDB",
+    href: "#",
+    description: [
+      "Built a microservices-based LMS for mentors and students with course, task, and document management.",
+      "Implemented real-time chat, discussions, and notifications using Socket.io for 100+ concurrent users.",
+      "Integrated AI features for doubt solving, content generation, and student performance analysis."
+    ]
+  },
+  {
+    title: "NH Studioz",
+    type: "Movie Platform",
+    stack: "Next.js, Tailwind, GraphQL",
+    href: "#",
+    description: [
+      "Built a cinematic movie distribution platform with advanced catalog browsing and streaming-inspired UI.",
+      "Developed a scalable CMS-driven architecture using Contentful GraphQL APIs for 100+ movie titles.",
+      "Implemented inquiry workflows, analytics integrations, and performance optimizations for high-scale traffic."
+    ]
+  },
+  {
     title: "Componentry",
     type: "UI Library",
     stack: "React",
     href: "https://www.componentry.fun",
-    description: "Built by Harsh Jadhav. A React UI component library with accessible, customizable components for production applications."
+    description: "Built by Manthan Sorkhade. A React UI component library with accessible, customizable components for production applications."
   },
   {
     title: "GameSideVault",
     type: "Crypto Wallet",
     stack: "Solana",
-    href: "https://github.com/harshjdhv",
+    href: "https://github.com/sorkhademanthan",
     description: "Crypto wallet infrastructure with multi-chain support. Implements fund locking and automated releases."
   },
   {
     title: "Perpetual Trading",
     type: "Exchange UI",
     stack: "React",
-    href: "https://github.com/harshjdhv",
+    href: "https://github.com/sorkhademanthan",
     description: "Frontend for a perpetual futures trading interface. Includes wallet connection and real-time chart rendering."
   },
   {
     title: "AnchorPay",
     type: "Escrow Platform",
     stack: "Next.js",
-    href: "https://github.com/harshjdhv",
+    href: "https://github.com/sorkhademanthan",
     description: "Escrow payment platform. Freelancers and clients can lock funds against milestones."
   }
 ];
@@ -98,8 +128,8 @@ export default function Home() {
           <div className="flex justify-start">
             <div className="-rotate-2 rounded-2xl border border-border/70 bg-background/40 p-px shadow-sm">
               <Image
-                src="/_.jpeg"
-                alt="Harsh Jadhav profile image"
+                src="/profile_picture.png"
+                alt="Manthan Sorkhade profile image"
                 width={80}
                 height={80}
                 priority
@@ -113,19 +143,19 @@ export default function Home() {
         <FadeIn delay={0.05}>
           <header className="flex flex-col gap-6">
             <h1 className="text-[22px] sm:text-[26px] tracking-tight max-w-[28ch] leading-[1.3]">
-              <span className="text-foreground font-semibold">I&apos;m Harsh Jadhav.</span>{" "}
+              <span className="text-foreground font-semibold">I&apos;m Manthan Sorkhade.</span>{" "}
               <span className="text-muted-foreground font-medium">a builder, full stack developer and hobbyist designer.</span>
             </h1>
 
             <div className="flex flex-col gap-5 max-w-[55ch]">
               <p className="font-sans text-[15.5px] sm:text-[16px] text-muted-foreground leading-[1.75]">
-                I build things from zero. Focused on polished web interfaces and performant systems. If it&apos;s boring and reliable, it&apos;s good enough to ship.
+                I design and build software from scratch. Focused on craft, polished interfaces, and clean systems. If it&apos;s simple and reliable, it&apos;s ready to ship.
               </p>
             </div>
 
             <div className="flex flex-wrap items-center gap-2 pt-2">
               <Link
-                href="mailto:hi@harshjdhv.com"
+                href="mailto:sorkhademanthan@gmail.com"
                 className="group flex items-center gap-1.5 bg-muted text-muted-foreground hover:text-foreground w-fit py-1 px-2.5 rounded-full text-[13px] font-medium transition-colors"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none">
@@ -136,7 +166,7 @@ export default function Home() {
               </Link>
 
               <Link
-                href="https://www.linkedin.com/in/jadhavharsh"
+                href="https://www.linkedin.com/in/sorkhademanthan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-1.5 bg-muted text-muted-foreground hover:text-foreground w-fit py-1 px-2.5 rounded-full text-[13px] font-medium transition-colors"
@@ -148,7 +178,7 @@ export default function Home() {
               </Link>
 
               <Link
-                href="https://x.com/harshjdhv"
+                href="https://x.com/ManthanSorkhade"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-1.5 bg-muted text-muted-foreground hover:text-foreground w-fit py-1 px-2.5 rounded-full text-[13px] font-medium transition-colors"
@@ -160,7 +190,7 @@ export default function Home() {
               </Link>
 
               <Link
-                href="https://github.com/harshjdhv"
+                href="https://github.com/sorkhademanthan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-1.5 bg-muted text-muted-foreground hover:text-foreground w-fit py-1 px-2.5 rounded-full text-[13px] font-medium transition-colors"
@@ -198,9 +228,11 @@ export default function Home() {
                         <span>{exp.period}</span>
                       </div>
                     </div>
-                    <p className="font-sans text-[14.5px] sm:text-[15px] text-muted-foreground leading-[1.7] max-w-[65ch]">
-                      {exp.description}
-                    </p>
+                    <ul className="font-sans text-[14.5px] sm:text-[15px] text-muted-foreground leading-[1.7] max-w-[65ch] list-disc list-outside ml-4 space-y-1">
+                      {exp.description.map((point, idx) => (
+                        <li key={idx} className="pl-1.5">{point}</li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
@@ -228,9 +260,17 @@ export default function Home() {
                         <ArrowUpRight className="w-3.5 h-3.5 text-neutral-400 group-hover:text-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                       </div>
                     </div>
-                    <p className="font-sans text-[14.5px] sm:text-[15px] text-muted-foreground leading-[1.7] max-w-[65ch]">
-                      {project.description}
-                    </p>
+                    {Array.isArray(project.description) ? (
+                      <ul className="font-sans text-[14.5px] sm:text-[15px] text-muted-foreground leading-[1.7] max-w-[65ch] list-disc list-outside ml-4 space-y-1">
+                        {project.description.map((point, idx) => (
+                          <li key={idx} className="pl-1.5">{point}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="font-sans text-[14.5px] sm:text-[15px] text-muted-foreground leading-[1.7] max-w-[65ch]">
+                        {project.description}
+                      </p>
+                    )}
                   </Link>
                 ))}
               </div>
@@ -301,7 +341,7 @@ export default function Home() {
         <FadeIn delay={0.5}>
           <footer className="pt-10 flex flex-row items-center justify-between gap-4 font-sans text-[14px] opacity-60">
             <div className="flex items-center gap-3">
-              <span className="font-mono-meta text-xs text-neutral-400">© {new Date().getFullYear()} Harsh Jadhav</span>
+              <span className="font-mono-meta text-xs text-neutral-400">© {new Date().getFullYear()} Manthan Sorkhade</span>
               <span className="text-neutral-300 dark:text-neutral-700 text-xs">·</span>
               <LocalTime />
             </div>

@@ -1,50 +1,47 @@
 import { Metadata, Viewport } from "next";
 
-const MAIN_TITLE = "Harsh Jadhav";
+const MAIN_TITLE = "Manthan Sorkhade";
 const MAIN_DESCRIPTION =
-  "Harsh Jadhav, also known as harshjdhv, is a software engineer in Mumbai building Componentry, React UI components, user-facing applications, and the systems behind them.";
-const SITE_URL = "https://www.harshjdhv.com";
+  "Manthan Sorkhade is a software engineer and builder focusing on polished web interfaces and clean, reliable systems.";
+const SITE_URL = "https://www.sorkhademanthan.com";
 const GOOGLE_SITE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
 export const sharedMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: MAIN_TITLE,
-    template: `%s | Harsh Jadhav`,
+    template: `%s | Manthan Sorkhade`,
   },
   description: MAIN_DESCRIPTION,
   keywords: [
-    "Harsh Jadhav",
-    "harshjdhv",
-    "Harsh Jadhav harshjdhv",
+    "Manthan Sorkhade",
+    "sorkhademanthan",
+    "Manthan Sorkhade sorkhademanthan",
     "Software Engineer",
     "Full Stack Developer",
     "Frontend Engineer",
     "Open Source Developer",
     "Web Application Development",
     "React UI Components",
-    "Componentry",
     "System Design",
     "Interface Design",
-    "Mumbai Software Engineer",
-    "Mumbai",
   ],
-  authors: [{ name: "Harsh Jadhav", url: SITE_URL }],
-  creator: "Harsh Jadhav",
-  publisher: "Harsh Jadhav",
+  authors: [{ name: "Manthan Sorkhade", url: SITE_URL }],
+  creator: "Manthan Sorkhade",
+  publisher: "Manthan Sorkhade",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: SITE_URL,
     title: MAIN_TITLE,
     description: MAIN_DESCRIPTION,
-    siteName: "Harsh Jadhav",
+    siteName: "Manthan Sorkhade",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Harsh Jadhav - Software Engineer",
+        alt: "Manthan Sorkhade - Software Engineer",
       },
     ],
   },
@@ -52,7 +49,7 @@ export const sharedMetadata: Metadata = {
     card: "summary_large_image",
     title: MAIN_TITLE,
     description: MAIN_DESCRIPTION,
-    creator: "@harshjdhv",
+    creator: "@ManthanSorkhade",
   },
   robots: {
     index: true,
